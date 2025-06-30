@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sftp_loader
+    username: ${SFTP_DB_USER}
+    password: ${SFTP_DB_PASS}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  sql:
+    init:
+      mode: always
+
+sftp:
+  host: ${SFTP_HOST}
+  port: ${SFTP_PORT:22}
+  user: ${SFTP_USER}
+  password: ${SFTP_PASS}
+  remote-dir: /data
+
+app:
+  download-dir: /downloads
